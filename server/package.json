@@ -1,0 +1,48 @@
+{
+  "name": "billableserver",
+  "version": "0.1.0",
+  "description": "Track And Bill Clients using Twilio",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thinkful-ei25/billable-server.git"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "now-start": "node",
+    "mocha": "mocha --exit --file test/setup.test.js '!(node_modules)/**/*test.js'",
+    "mocha-exit0": "mocha --exit --file test/setup.test.js '!(node_modules)/**/*test.js' || true",
+    "test": "nodemon --exec npm run mocha-exit0",
+    "cover": "nodemon --exec nyc --reporter=lcov --reporter=text-summary npm run mocha-exit0",
+    "heroku": "node index.js",
+    "travis": "npm run mocha"
+  },
+  "author": "Node It Alls nodeItAlls@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.0",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.4",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.0",
+    "knex": "^0.16.3",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "mongoose": "^5.2.6",
+    "morgan": "^1.9.0",
+    "nodemailer": "^5.1.1",
+    "nodemon": "^1.18.9",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.4.3",
+    "twilio": "^3.27.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  }
+}
